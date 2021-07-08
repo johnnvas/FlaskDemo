@@ -15,9 +15,11 @@ def help():
     return render_template('page.html', title='HEARD YOU NEEDED SOME HELP')
 
 
-@bp.route('/login')
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/')
     return render_template('login.html', form=form)
 
 

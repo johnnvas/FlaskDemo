@@ -6,8 +6,15 @@
   </head>
 
   <body>
+      {% include 'nav.html'%}
     <h1>QUE LO QUE JINJA</h1>
     <h2>Please Sign In</h2>
+    <form action='' method="post">
+      {{ form.hidden_tag() }}
+      <p> {{ form.username(placeholder='Enter username') }} </p>
+      <p> {{ form.password(placeholder='Enter password') }} </p>
+      <p> {{ form.submit() }}   </p>
+    </form>
   </body>
 
 </html>
